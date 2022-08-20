@@ -1,0 +1,30 @@
+[
+
+    {
+        "id": 1,
+        "state": "Personal Project",
+        "name": " Ecommerce Website ",
+        "img": "image/e-com.gif",
+        "description": "",
+        "lang1": "ReactJs",
+        "lang2": "Tailwindcss"
+    },
+    {
+        "id": 2,
+        "state": "Personal Project",
+        "name": " Hotalime ",
+        "img": "image/hotelime.gif",
+        "description": "",
+        "lang1": "ReactJs",
+        "lang2": "Tailwindcss"
+    },
+    {
+        "id": 3,
+        "state": "Personal Project",
+        "name": " Manage Landing Page",
+        "img": "image/manage.gif",
+        "description": "",
+        "lang1": "ReactJs",
+        "lang2": "Tailwindcss"
+    }
+]
