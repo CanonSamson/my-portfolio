@@ -1,35 +1,52 @@
-import { Link } from 'react-router-dom';
-import Project from '../project/projects.json'
+import { Link, NavLink } from 'react-router-dom';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import finders from '../image/findersca.gif'
+import port from '../image/ba.gif'
 
 const Work = () => {
- 
+    const Project = [
+        {
+            id: 1,
+            name: "Finders Market",
+            img: finders,
+
+        },
+    ]
     return (
-        <section id='work' className='sm:p-10 p-5   pt-20 max-w-[1000px] m-auto z-10'>
-            <div className='flex items-center justify-between'>
-                <div className='flex items-end'>
-                    <span className=' text-[#1c0f3f] py-3 mr-3 text-xl sm:text-xl'>03.</span>
-                    <h1 className=' text-[#1c0f3f] text-xl font-bold my-3 sm:text-3xl'>Some Things I’ve Built</h1>
-                </div>
-                <span className='h-[1px] w-[10%] mt-[10px] bg-[#1c0f3f]/50'></span>
+        <div className=" ">
+            <div className=" flex items-center border mb-2 shadow-lg  ">
+                <span className=" mr-3 p-2 border animate-bounce border-blue-900 text-blue-900">Main Project</span>
+               <Link to='archived'  > <span>Archived Project</span></Link>
+
             </div>
+
             <div className='grid sm:grid-cols-2 gap-5'>
                 {
                     Project.map((items) => (
-                        <Link to={`/project/${items.id}`}>
-                            <div className=' bg-gray-50  pl-10 pt-10 my-5  ' >
-                                <div className='mb-6'>
-                                    <p className=' text-[#1c0f3f]  text-2xl flex'>{items.name}</p>
-                                </div>
-                                <div className=' flex justify-end'>
-                                    <img className='   rounded-t-[50px] ' src={items.img} alt="" />
+                        <Link key={items.id} to={`/project/${items.id}`}>
+                            <div className=' bg-gray-50  pl-10 pt-10 my-5 flex flex-col relative' >
+                                <div className=' flex flex-col'>
+                                    <div className='mb-6'>
+                                        <p className=' text-[#1c0f3f]  text-2xl flex'>{items.name}</p>
+                                    </div>
+                                    <div className=' flex justify-center'>
+                                        <img className=' w-[70%]' src={items.img} alt="" />
+                                    </div>
+                                    <div className=' absolute bottom-20 left-3 p-2 text-[#1c0f3f] rounded-full shadow-lg bg-white'>
+                                        <GitHubIcon />
+                                    </div>
+                                    <div className=' absolute bottom-5 left-3 p-2 text-[#1c0f3f] rounded-full shadow-lg bg-white'>
+                                        <OpenInNewIcon />
+                                    </div>
                                 </div>
                             </div>
                         </Link>
                     ))
                 }
             </div>
+        </div>
 
-        </section>
     );
 }
 

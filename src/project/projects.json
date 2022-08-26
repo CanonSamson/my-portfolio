@@ -2,29 +2,26 @@
 
     {
         "id": 1,
-        "state": "Personal Project",
-        "name": " Ecommerce Website ",
-        "img": "image/e-com.gif",
-        "description": "",
-        "lang1": "ReactJs",
-        "lang2": "Tailwindcss"
+        "name": " Iidea Collections ",
+        "img": "image/e-com.gif"
+
     },
     {
         "id": 2,
-        "state": "Personal Project",
         "name": " Hotalime ",
-        "img": "image/hotelime.gif",
-        "description": "",
-        "lang1": "ReactJs",
-        "lang2": "Tailwindcss"
+        "img": "image/hotelime.gif"
+
     },
     {
         "id": 3,
-        "state": "Personal Project",
         "name": " Manage Landing Page",
-        "img": "image/manage.gif",
-        "description": "",
-        "lang1": "ReactJs",
-        "lang2": "Tailwindcss"
+        "img": "image/ba.gif"
+
+    },
+    {
+        "id": 4,
+        "name": " Manage Landing Page",
+        "img": "image/ba.gif"
+
     }
 ]

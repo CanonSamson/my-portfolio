@@ -31,7 +31,7 @@ const NavBar = () => {
             <div className='flex items-center'>
                 {
                     navLinks.map((links) => (
-                        <Link className='ml-5 items-center justify-center flex  ' to={links.link} smooth >
+                        <Link key={links.id} className='ml-5 items-center justify-center flex  ' to={links.link} smooth >
                             <span className=' mr-1 text-black py-0  '>{links.id}.</span>
                             <h1 className=' text-black'>{links.name}</h1>
                         </Link>

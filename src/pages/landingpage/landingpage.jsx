@@ -7,6 +7,10 @@ import './css.css'
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Where from '../../components/Where';
+import imge from '../../image/ba.gif'
+import ProjectRoute from '../ProjectRoute';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Archived from '../../components/Archived';
 
 
 const Landingpage = () => {
@@ -21,31 +25,37 @@ const Landingpage = () => {
             {
                 touch &&
                 <div className=" ">
-                    <form className=" top-[20%] mx-[10%] sm:w-[60%] md:w-[40%] md:mx-[30%] sm:mx-[20%]  w-[80%] p-4 items-center justify-center bg-[#382274] fixed z-40 ">
+                    <form className=" top-[20%] shadow-xl mx-[10%] sm:w-[60%] md:w-[40%] md:mx-[30%] sm:mx-[20%]  w-[80%] p-4 items-center justify-center bg-gray-50 fixed z-40 ">
                         <input className=' bg-transparent  border focus:outline-none focus:border-[#1c0f3f] text-[#1c0f3f] p-3 rounded text-x mt-[1rem] w-full ' type="email" placeholder="Enter Your Email" />
                         <textarea className=' bg-transparent  border p-3  focus:outline-none focus:border-[#1c0f3f] text-[#1c0f3f] rounded text-x mt-[1rem] w-full ' type="text" placeholder="Enter Text" />
                         <button className='  border border-[#1c0f3f] text-[#1c0f3f]  font-bold  p-2 rounded text-x mt-[3rem] w-full '>Send Text</button>
                     </form>
-                    <div onClick={OnTouch} className='fixed h-screen w-full right-0  bg-[#1c0f3f]/50 top-0 z-30 backdrop-blur-sm'></div>
+                    <div onClick={OnTouch} className='fixed h-screen  w-full right-0  bg-white/50 top-0 z-30 backdrop-blur-sm'></div>
                 </div>
             }
 
             <NavBar />
 
-                <MobileNav />
-                  <motion.div
-                  initial={{ opacity: 0, y: 200}}
-                  animate={{ opacity: 1, y: 0}} 
-                  transition={{ duration: .34 }}
-                  className='sm:p-10 p-5  h-screen justify-center flex flex-col max-w-[940px] m-auto'>
+            <MobileNav />
+            <motion.div
+                initial={{ opacity: 0, y: 200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: .34 }}
+                className='sm:p-10 p-5  h-screen justify-center flex flex-col max-w-[940px] m-auto'>
                 <p className=' text-[#1c0f3f] py-3 sm:text-xl' >Hi, my name is</p>
                 <h1 className=' text-[#1c0f3f] text-3xl font-bold my-3 sm:text-6xl'> Canon Samson. </h1>
                 <span className=' text-[#8892b0]  text-3xl font-bold  sm:text-6xl'>I build things for the web.</span>
-                <p className='text-[#1c0f3f] sm:pr-10 my-5 text-[14px] sm:text-xl'>I’m a Frontend developer specializing in building (web applications and Native applications ). Currently i'm an intern at
-                    <Link className='text-[#1c0f3f]' to=""> n-hub Foundation</Link></p>
-                <Link onClick={OnTouch} to="" ><p className='text-[#1c0f3f] active:scale-105 border border-[#1c0f3f] p-3 rounded text-x mt-[3rem] w-[60%] max-w-[250px] text-center' >Get in Touch!</p></Link>
-                </motion.div>
-                <Work />
+                <p className='text-[#1c0f3f] sm:pr-10 my-5 text-[14px] sm:text-xl'>I’m a Frontend developer specializing in building (web applications and Native applications ).</p>
+                <Link onClick={OnTouch} to="" ><p className='text-[#1c0f3f] active:scale-105 border border-[#1c0f3f] p-3 rounded text-x mt-[3rem] w-[50%] max-w-[250px] text-center animate-bounce' >Get in Touch!</p></Link>
+            </motion.div>
+
+                <Routes>
+                    <Route path="/" element={<ProjectRoute />}  >
+                        <Route path="" element={<Work />} />
+                        <Route path="archived" element={<Archived />} />
+                    </Route>
+                </Routes>
+
             <AboutMe />
             <Where />
 
