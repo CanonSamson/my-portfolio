@@ -1,8 +1,9 @@
 import { Link, NavLink } from 'react-router-dom';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import finders from '../image/findersca.gif'
-import port from '../image/ba.gif'
+import finders from '../image/finders-market.gif'
+import hoteldime from '../image/hoteldime.gif'
+
 
 const Work = () => {
     const Project = [
@@ -10,6 +11,16 @@ const Work = () => {
             id: 1,
             name: "Finders Market",
             img: finders,
+            github: "https://github.com/CanonSamson/finders-market-frontend",
+            live: "https://finders-market.vercel.app/",
+
+        },
+        {
+            id: 2,
+            name: "Hoteldime",
+            img: hoteldime,
+            github: "https://github.com/CanonSamson/hoteldime",
+            live: "https://hoteldime.vercel.app/",
 
         },
     ]
@@ -31,14 +42,14 @@ const Work = () => {
                                         <p className=' text-[#1c0f3f]  text-2xl flex'>{items.name}</p>
                                     </div>
                                     <div className=' flex justify-center'>
-                                        <img className=' w-[70%]' src={items.img} alt="" />
+                                        <img className=' w-[50%]' src={items.img} alt="" />
                                     </div>
-                                    <div className=' absolute bottom-20 left-3 p-2 text-[#1c0f3f] rounded-full shadow-lg bg-white'>
+                                    <a href={items.github} className=' absolute bottom-20 left-3 p-2 text-[#1c0f3f] rounded-full shadow-lg bg-white'>
                                         <GitHubIcon />
-                                    </div>
-                                    <div className=' absolute bottom-5 left-3 p-2 text-[#1c0f3f] rounded-full shadow-lg bg-white'>
+                                    </a>
+                                    <a href={items.live} className=' absolute bottom-5 left-3 p-2 text-[#1c0f3f] rounded-full shadow-lg bg-white'>
                                         <OpenInNewIcon />
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </Link>
