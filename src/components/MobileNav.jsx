@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
-import bar from '../icons/bar.svg'
-import cross from '../icons/cross.svg'
+import {motion} from 'framer-motion'
 import DehazeOutlinedIcon from '@mui/icons-material/DehazeOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
@@ -49,7 +48,7 @@ const MobileNav = () => {
             </div>
 
             <nav >
-                <div className={` ${toggle ?  "right-[0px]" : "right-[100%]" } fixed h-screen w-[70%] duration-300  bg-white shadow-2xl top-0 z-50 nav-anime`}>
+                <motion.div className={` ${toggle ?  "right-[0px] block" : "right-[-100%]" } fixed h-screen w-[70%] duration-300  bg-white shadow-2xl top-0 z-50 nav-anime`}>
                     <span onClick={toggler} className=' w-10 text-yellow-50 justify-between flex'>
                         <div className="w-7 mt-5 ml-5">
                             <div className=" text-black">
@@ -70,8 +69,8 @@ const MobileNav = () => {
                     <Link to="" className='  text-center' >
                         <p className='border border-black text-black  py-1 mt-[2rem] active:opcity-0 w-[50%] rounded m-auto' >Resume</p>
                     </Link>
-                </div>
-                <div onClick={toggler} className={` ${toggle ?  "opacity-100 right-[0%]"  :"opacity-0 right-[-100%]" } fixed h-screen w-full right-0 bg-white/20 top-0 z-10 backdrop-blur-sm`}></div>
+                </motion.div>
+                <div onClick={toggler} className={` ${toggle ?  "opacity-100 right-[0%] flex"  :" hidden opacity-0 right-[-100%]" } fixed h-screen w-full right-0 bg-white/20 top-0 z-10 backdrop-blur-sm`}></div>
             </nav>
 
         </div >
